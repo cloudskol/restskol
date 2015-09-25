@@ -8,6 +8,6 @@ import org.glassfish.jersey.server.ResourceConfig;
  */
 public class RestSkolApplication extends ResourceConfig {
     public RestSkolApplication() {
-        register(JacksonFeature.class);
+        register(JacksonFeature.class); //Enable JSON media type support
     }
 }
