@@ -6,6 +6,7 @@ import java.util.*;
 
 /**
  * @author tham (zarub2k@gmail.com)
+ * Dummay data store class for providing book related information
  */
 public class BookDataStore {
     private static final BookDataStore bookDataStore = new BookDataStore();
