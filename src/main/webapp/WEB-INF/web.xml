@@ -9,10 +9,10 @@
             <param-name>javax.ws.rs.Application</param-name>
             <param-value>com.cloudskol.restskol.RestSkolApplication</param-value>
         </init-param>
-        <init-param>
+        <!-- <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
             <param-value>com.cloudskol.restskol.resources</param-value>
-        </init-param>
+        </init-param>-->
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
