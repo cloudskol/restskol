@@ -24,6 +24,7 @@ public class BookResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllBooks() {
+        System.out.println("Get all books resource is called");
         final List<Book> books = BookDataStore.getInstance().getBooks();
         return Response.ok()
                 .entity(books)

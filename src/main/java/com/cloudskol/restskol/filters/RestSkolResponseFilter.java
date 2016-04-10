@@ -13,6 +13,6 @@ public class RestSkolResponseFilter implements ContainerResponseFilter {
     @Override
     public void filter(ContainerRequestContext containerRequestContext,
                        ContainerResponseContext containerResponseContext) throws IOException {
-
+        containerResponseContext.getHeaders().add("X-Powered-By", "RESTSkol");
     }
 }
