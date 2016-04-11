@@ -39,15 +39,15 @@ public class BookDataStore {
     }
 
     public void initialize() {
-        availableBooks.add(addBook("1", "The Lean Startup", "Eric Ries",
+        availableBooks.add(newBook("1", "The Lean Startup", "Eric Ries",
                 "0670921602"));
-        availableBooks.add(addBook("2", "Zero to one", "Peter Thiel",
+        availableBooks.add(newBook("2", "Zero to one", "Peter Thiel",
                 "0753555190"));
-        availableBooks.add(addBook("3", "The 100$ Start-up", "Chris Guillebeau",
+        availableBooks.add(newBook("3", "The 100$ Start-up", "Chris Guillebeau",
                 "023076651X"));
     }
 
-    public Book addBook(String id, String title,
+    public Book newBook(String id, String title,
                            String author, String isbn) {
         final Book book = new Book();
         book.setId(id);
