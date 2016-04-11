@@ -1,8 +1,8 @@
 package com.cloudskol.restskol;
 
-import com.cloudskol.restskol.filters.APIKeyCheckRequestFilter;
-import com.cloudskol.restskol.filters.PreMatchingFilter;
-import com.cloudskol.restskol.filters.RestSkolResponseFilter;
+import com.cloudskol.restskol.filters.server.APIKeyCheckRequestFilter;
+import com.cloudskol.restskol.filters.server.PreMatchingFilter;
+import com.cloudskol.restskol.filters.server.RestSkolResponseFilter;
 import com.cloudskol.restskol.resources.BookResource;
 import com.cloudskol.restskol.resources.VersionedAPI;
 import org.glassfish.jersey.jackson.JacksonFeature;
