@@ -1,5 +1,8 @@
 package com.cloudskol.restskol.filters.server;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.container.PreMatching;
@@ -14,8 +17,12 @@ import java.net.URISyntaxException;
 
 @PreMatching
 public class PreMatchingFilter implements ContainerRequestFilter {
+    private static final Logger logger = LogManager.getLogger(PreMatchingFilter.class);
+
     @Override
     public void filter(ContainerRequestContext containerRequestContext) throws IOException {
+        logger.info("Pre matching container request filter");
+
         final URI absolutePath = containerRequestContext.getUriInfo().getAbsolutePath();
         String path = absolutePath.getPath();
         System.out.println("Path: " + path);

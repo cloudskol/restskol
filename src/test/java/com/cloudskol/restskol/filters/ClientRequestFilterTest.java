@@ -1,6 +1,7 @@
 package com.cloudskol.restskol.filters;
 
 import com.cloudskol.restskol.filters.client.RestSkolClientRequestFilter;
+import com.cloudskol.restskol.filters.client.RestSkolClientResponseFilter;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -21,6 +22,7 @@ public class ClientRequestFilterTest {
     public void testClientRequestFilter() {
         final Client client = ClientBuilder.newBuilder()
                 .register(RestSkolClientRequestFilter.class)
+                .register(RestSkolClientResponseFilter.class)
                 .build();
 
         final WebTarget webTarget = client.target("http://localhost:8080/restskol/api")
@@ -29,7 +31,7 @@ public class ClientRequestFilterTest {
         final Invocation.Builder request = webTarget
                 .request(MediaType.APPLICATION_JSON)
                 .header("X-API-KEY", "RESTSkol");
-        final String response = request.build("PATCH").invoke().readEntity(String.class);
+        final String response = request.build("GET").invoke().readEntity(String.class);
         System.out.println(response);
     }
 }

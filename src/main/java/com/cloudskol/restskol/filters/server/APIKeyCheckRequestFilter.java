@@ -1,5 +1,8 @@
 package com.cloudskol.restskol.filters.server;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.core.Response;
@@ -11,10 +14,14 @@ import java.util.List;
  */
 
 public class APIKeyCheckRequestFilter implements ContainerRequestFilter {
+    private static final Logger logger = LogManager.getLogger(APIKeyCheckRequestFilter.class);
+
     private static final String API_KEY = "X-API-KEY";
 
     @Override
     public void filter(ContainerRequestContext containerRequestContext) throws IOException {
+        logger.info("Container request filter");
+
         final String apiKey = containerRequestContext.getHeaders().getFirst(API_KEY);
         System.out.println("API KEY: " + apiKey);
 
