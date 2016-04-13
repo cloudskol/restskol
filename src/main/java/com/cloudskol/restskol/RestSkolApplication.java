@@ -3,6 +3,8 @@ package com.cloudskol.restskol;
 import com.cloudskol.restskol.filters.server.APIKeyCheckRequestFilter;
 import com.cloudskol.restskol.filters.server.PreMatchingFilter;
 import com.cloudskol.restskol.filters.server.RestSkolResponseFilter;
+import com.cloudskol.restskol.interceptors.RestSkolReaderInterceptor;
+import com.cloudskol.restskol.interceptors.RestSkolWriterInterceptor;
 import com.cloudskol.restskol.resources.BookResource;
 import com.cloudskol.restskol.resources.VersionedAPI;
 import org.glassfish.jersey.jackson.JacksonFeature;
@@ -35,5 +37,8 @@ public class RestSkolApplication extends ResourceConfig {
         classes.add(APIKeyCheckRequestFilter.class);
         classes.add(RestSkolResponseFilter.class);
         classes.add(PreMatchingFilter.class);
+
+        classes.add(RestSkolWriterInterceptor.class);
+        classes.add(RestSkolReaderInterceptor.class);
     }
 }
