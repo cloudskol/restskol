@@ -7,6 +7,7 @@ import com.cloudskol.restskol.interceptors.RestSkolReaderInterceptor;
 import com.cloudskol.restskol.interceptors.RestSkolWriterInterceptor;
 import com.cloudskol.restskol.resources.BookResource;
 import com.cloudskol.restskol.resources.VersionedAPI;
+import com.cloudskol.restskol.sse.RestSkolSSEResource;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.media.sse.SseFeature;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -40,14 +41,15 @@ public class RestSkolApplication extends ResourceConfig {
     private void registerResources() {
         classes.add(BookResource.class);
         classes.add(VersionedAPI.class);
+        classes.add(RestSkolSSEResource.class);
     }
 
     private void registerProviders() {
-        classes.add(APIKeyCheckRequestFilter.class);
+//        classes.add(APIKeyCheckRequestFilter.class);
         classes.add(RestSkolResponseFilter.class);
         classes.add(PreMatchingFilter.class);
 
-        classes.add(RestSkolWriterInterceptor.class);
-        classes.add(RestSkolReaderInterceptor.class);
+//        classes.add(RestSkolWriterInterceptor.class);
+//        classes.add(RestSkolReaderInterceptor.class);
     }
 }
