@@ -6,6 +6,7 @@ import com.cloudskol.restskol.filters.server.PreMatchingFilter;
 import com.cloudskol.restskol.filters.server.RestSkolResponseFilter;
 import com.cloudskol.restskol.interceptors.RestSkolReaderInterceptor;
 import com.cloudskol.restskol.interceptors.RestSkolWriterInterceptor;
+import com.cloudskol.restskol.monitoring.RestSkolApplicationEventListener;
 import com.cloudskol.restskol.resources.BookResource;
 import com.cloudskol.restskol.resources.VersionedAPI;
 import com.cloudskol.restskol.sse.RestSkolSSEResource;
@@ -29,9 +30,14 @@ public class RestSkolApplication extends ResourceConfig {
     private void initializeApplication() {
         registerFeatures(); //Register features
         registerProviders(); // Register providers
+        registerListeners(); // Register listeners
         registerResources(); // Register resources
 
         registerClasses(classes);
+    }
+
+    private void registerListeners() {
+        classes.add(RestSkolApplicationEventListener.class);
     }
 
     private void registerFeatures() {
