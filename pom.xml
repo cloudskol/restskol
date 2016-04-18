@@ -52,7 +52,12 @@
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
-            <version>2.21</version>
+            <version>${jersey.jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-sse</artifactId>
         </dependency>
 
         <dependency>
@@ -76,6 +81,7 @@
 
     <properties>
         <jersey.version>2.19</jersey.version>
+        <jersey.jackson.version>2.21</jersey.jackson.version>
         <junit.version>4.12</junit.version>
         <log4j.version>2.5</log4j.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
