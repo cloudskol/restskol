@@ -42,11 +42,8 @@ public class RestSkolApplication extends ResourceConfig {
     private void registerResources() {
         classes.add(BookResource.class);
         classes.add(VersionedAPI.class);
-<<<<<<< HEAD
         classes.add(RestSkolAsyncResource.class);
-=======
         classes.add(RestSkolSSEResource.class);
->>>>>>> origin/master
     }
 
     private void registerProviders() {
