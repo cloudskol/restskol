@@ -1,5 +1,6 @@
 package com.cloudskol.restskol;
 
+import com.cloudskol.restskol.async.RestSkolAsyncResource;
 import com.cloudskol.restskol.filters.server.APIKeyCheckRequestFilter;
 import com.cloudskol.restskol.filters.server.PreMatchingFilter;
 import com.cloudskol.restskol.filters.server.RestSkolResponseFilter;
@@ -31,6 +32,7 @@ public class RestSkolApplication extends ResourceConfig {
     private void addResources() {
         classes.add(BookResource.class);
         classes.add(VersionedAPI.class);
+        classes.add(RestSkolAsyncResource.class);
     }
 
     private void addProviders() {
