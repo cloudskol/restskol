@@ -1,6 +1,5 @@
 package com.cloudskol.restskol.filters.client;
 
-import com.sun.corba.se.pept.transport.ResponseWaitingRoom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

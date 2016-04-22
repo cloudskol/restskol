@@ -1,4 +1,4 @@
-package com.cloudskol.restskol.metrics;
+package com.cloudskol.restskol.health;
 
 import com.codahale.metrics.health.HealthCheckRegistry;
 import com.codahale.metrics.servlets.HealthCheckServlet;
@@ -7,7 +7,7 @@ import com.codahale.metrics.servlets.HealthCheckServlet;
  * @author tham
  */
 
-public class RestskolMetricsContextListener extends HealthCheckServlet.ContextListener {
+public class RestSkolHealthCheckListener extends HealthCheckServlet.ContextListener {
     public static final HealthCheckRegistry healthCheckRegistry = new HealthCheckRegistry();
 
     @Override
