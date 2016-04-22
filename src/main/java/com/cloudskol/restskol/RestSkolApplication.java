@@ -10,17 +10,25 @@ import com.cloudskol.restskol.monitoring.RestSkolApplicationEventListener;
 import com.cloudskol.restskol.resources.BookResource;
 import com.cloudskol.restskol.resources.VersionedAPI;
 import com.cloudskol.restskol.sse.RestSkolSSEResource;
+import com.codahale.metrics.ConsoleReporter;
+import com.codahale.metrics.MetricRegistry;
+import com.codahale.metrics.jersey2.InstrumentedResourceMethodApplicationListener;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.media.sse.SseFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author tham (zarub2k@gmail.com)
  */
 public class RestSkolApplication extends ResourceConfig {
+    private static final Logger logger = LogManager.getLogger(RestSkolApplication.class);
+
     private Set<Class<?>> classes = new HashSet<Class<?>>();
 
     public RestSkolApplication() {
@@ -37,7 +45,17 @@ public class RestSkolApplication extends ResourceConfig {
     }
 
     private void registerListeners() {
-        classes.add(RestSkolApplicationEventListener.class);
+//        classes.add(RestSkolApplicationEventListener.class);
+        final MetricRegistry metricRegistry = new MetricRegistry();
+        register(new InstrumentedResourceMethodApplicationListener(metricRegistry));
+
+//        ConsoleReporter.forRegistry(metricRegistry)
+//                .convertRatesTo(TimeUnit.SECONDS)
+//                .convertDurationsTo(TimeUnit.MILLISECONDS)
+//                .build()
+//                .start(1, TimeUnit.MINUTES);
+//
+//        logger.info("Console reporter is enabled successfully!");
     }
 
     private void registerFeatures() {
@@ -48,14 +66,14 @@ public class RestSkolApplication extends ResourceConfig {
     private void registerResources() {
         classes.add(BookResource.class);
         classes.add(VersionedAPI.class);
-        classes.add(RestSkolAsyncResource.class);
-        classes.add(RestSkolSSEResource.class);
+//        classes.add(RestSkolAsyncResource.class);
+//        classes.add(RestSkolSSEResource.class);
     }
 
     private void registerProviders() {
 //        classes.add(APIKeyCheckRequestFilter.class);
-        classes.add(RestSkolResponseFilter.class);
-        classes.add(PreMatchingFilter.class);
+//        classes.add(RestSkolResponseFilter.class);
+//        classes.add(PreMatchingFilter.class);
 
 //        classes.add(RestSkolWriterInterceptor.class);
 //        classes.add(RestSkolReaderInterceptor.class);

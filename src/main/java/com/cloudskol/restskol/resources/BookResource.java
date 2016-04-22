@@ -2,6 +2,7 @@ package com.cloudskol.restskol.resources;
 
 import com.cloudskol.restskol.data.BookDataStore;
 import com.cloudskol.restskol.model.Book;
+import com.codahale.metrics.annotation.Timed;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -23,6 +24,7 @@ public class BookResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Timed
     public Response getAllBooks() {
         System.out.println("Get all books resource is called");
         final List<Book> books = BookDataStore.getInstance().getBooks();
@@ -34,6 +36,7 @@ public class BookResource {
     @Path("{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Timed
     public Response getBook(@PathParam("id") String id) {
         final Book book = BookDataStore.getInstance().getBook(id);
         return Response.ok()  // (Response code)
