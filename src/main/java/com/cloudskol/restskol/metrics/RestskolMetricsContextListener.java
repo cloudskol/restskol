@@ -7,7 +7,7 @@ import com.codahale.metrics.servlets.HealthCheckServlet;
  * @author tham
  */
 
-public class CloudskolMetricsContextListener extends HealthCheckServlet.ContextListener {
+public class RestskolMetricsContextListener extends HealthCheckServlet.ContextListener {
     public static final HealthCheckRegistry healthCheckRegistry = new HealthCheckRegistry();
 
     @Override
