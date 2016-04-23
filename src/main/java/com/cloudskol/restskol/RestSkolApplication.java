@@ -49,11 +49,11 @@ public class RestSkolApplication extends ResourceConfig {
         final MetricRegistry metricRegistry = new MetricRegistry();
         register(new InstrumentedResourceMethodApplicationListener(metricRegistry));
 
-//        ConsoleReporter.forRegistry(metricRegistry)
-//                .convertRatesTo(TimeUnit.SECONDS)
-//                .convertDurationsTo(TimeUnit.MILLISECONDS)
-//                .build()
-//                .start(1, TimeUnit.MINUTES);
+        ConsoleReporter.forRegistry(metricRegistry)
+                .convertRatesTo(TimeUnit.SECONDS)
+                .convertDurationsTo(TimeUnit.MILLISECONDS)
+                .build()
+                .start(1, TimeUnit.MINUTES);
 //
 //        logger.info("Console reporter is enabled successfully!");
     }
