@@ -11,6 +11,8 @@ import java.util.List;
 
 /**
  * @author tham
+ *
+ * Filter for validating whether the request contains the required API Key to access our API or not
  */
 
 public class APIKeyCheckRequestFilter implements ContainerRequestFilter {
