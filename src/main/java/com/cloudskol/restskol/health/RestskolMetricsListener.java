@@ -5,6 +5,8 @@ import com.codahale.metrics.servlets.MetricsServlet;
 
 /**
  * @author tham
+ *
+ * Metric servlet to listen context related changes
  */
 
 public class RestskolMetricsListener extends MetricsServlet.ContextListener {
