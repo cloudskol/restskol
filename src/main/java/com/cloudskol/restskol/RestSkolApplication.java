@@ -46,14 +46,14 @@ public class RestSkolApplication extends ResourceConfig {
 
     private void registerListeners() {
 //        classes.add(RestSkolApplicationEventListener.class);
-        final MetricRegistry metricRegistry = new MetricRegistry();
-        register(new InstrumentedResourceMethodApplicationListener(metricRegistry));
-
-        ConsoleReporter.forRegistry(metricRegistry)
-                .convertRatesTo(TimeUnit.SECONDS)
-                .convertDurationsTo(TimeUnit.MILLISECONDS)
-                .build()
-                .start(1, TimeUnit.MINUTES);
+//        final MetricRegistry metricRegistry = new MetricRegistry();
+//        register(new InstrumentedResourceMethodApplicationListener(metricRegistry));
+//
+//        ConsoleReporter.forRegistry(metricRegistry)
+//                .convertRatesTo(TimeUnit.SECONDS)
+//                .convertDurationsTo(TimeUnit.MILLISECONDS)
+//                .build()
+//                .start(1, TimeUnit.MINUTES);
 //
 //        logger.info("Console reporter is enabled successfully!");
     }
@@ -71,9 +71,9 @@ public class RestSkolApplication extends ResourceConfig {
     }
 
     private void registerProviders() {
-//        classes.add(APIKeyCheckRequestFilter.class);
-//        classes.add(RestSkolResponseFilter.class);
-//        classes.add(PreMatchingFilter.class);
+        classes.add(APIKeyCheckRequestFilter.class);
+        classes.add(RestSkolResponseFilter.class);
+        classes.add(PreMatchingFilter.class);
 
 //        classes.add(RestSkolWriterInterceptor.class);
 //        classes.add(RestSkolReaderInterceptor.class);
