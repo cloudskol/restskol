@@ -1,9 +1,8 @@
 package com.cloudskol.restskol.resources;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import com.cloudskol.restskol.model.Book;
+
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -16,9 +15,12 @@ import javax.ws.rs.core.Response;
 public interface IBookResource {
 
     @GET
-    public Response getAllBooks();
+    Response getBooks();
 
     @GET
     @Path("{id}")
-    public Response getBook(@PathParam("id") String id);
+    Response getBook(@PathParam("id") String id);
+
+    @POST
+    void createBook(Book book);
 }
