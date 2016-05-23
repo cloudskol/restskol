@@ -15,12 +15,21 @@ import javax.ws.rs.core.Response;
 public interface IBookResource {
 
     @GET
-    Response getBooks();
+    Response all();
 
     @GET
     @Path("{id}")
-    Response getBook(@PathParam("id") String id);
+    Response get(@PathParam("id") String id);
 
     @POST
-    void createBook(Book book);
+    void create(Book book);
+
+    @PUT
+    @Path("{id}")
+    void update(Book book);
+
+    @DELETE
+    @Path("{id}")
+    void delete(@PathParam("id") String id);
+
 }
