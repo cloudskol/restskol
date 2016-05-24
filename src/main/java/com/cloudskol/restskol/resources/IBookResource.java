@@ -8,6 +8,8 @@ import javax.ws.rs.core.Response;
 
 /**
  * @author tham
+ *
+ * Book REST API contract
  */
 
 @Path("books")
