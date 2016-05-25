@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 /**
  * @author tham
  *
- * Book REST API contract
+ * Book REST API contract. This API is to manage Book related resources
  */
 
 @Path("books")
