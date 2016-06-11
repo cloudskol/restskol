@@ -8,6 +8,7 @@ import com.cloudskol.restskol.interceptors.RestSkolReaderInterceptor;
 import com.cloudskol.restskol.interceptors.RestSkolWriterInterceptor;
 import com.cloudskol.restskol.monitoring.RestSkolApplicationEventListener;
 import com.cloudskol.restskol.resources.BookResource;
+import com.cloudskol.restskol.resources.PersonResource;
 import com.cloudskol.restskol.resources.VersionedAPI;
 import com.cloudskol.restskol.sse.RestSkolSSEResource;
 import com.codahale.metrics.ConsoleReporter;
@@ -66,6 +67,7 @@ public class RestSkolApplication extends ResourceConfig {
     private void registerResources() {
         classes.add(BookResource.class);
         classes.add(VersionedAPI.class);
+        classes.add(PersonResource.class);
 //        classes.add(RestSkolAsyncResource.class);
 //        classes.add(RestSkolSSEResource.class);
     }
