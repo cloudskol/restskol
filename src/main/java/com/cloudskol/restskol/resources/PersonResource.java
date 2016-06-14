@@ -9,6 +9,8 @@ import java.net.URI;
 
 /**
  * @author tham
+ *
+ * Person resource with CRUD operation
  */
 
 public class PersonResource implements IPersonResource {
