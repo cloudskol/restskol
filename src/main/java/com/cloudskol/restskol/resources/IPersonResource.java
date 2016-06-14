@@ -8,6 +8,8 @@ import javax.ws.rs.core.Response;
 
 /**
  * @author tham
+ *
+ * Interface to define all the endpoints related with {@link PersonResource}
  */
 
 @Path("/persons")
