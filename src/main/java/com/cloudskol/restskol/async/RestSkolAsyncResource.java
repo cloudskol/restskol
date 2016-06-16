@@ -10,6 +10,8 @@ import javax.ws.rs.container.Suspended;
 
 /**
  * @author tham
+ *
+ * Async resource for producing response without blocking the request
  */
 
 @Path("async")
