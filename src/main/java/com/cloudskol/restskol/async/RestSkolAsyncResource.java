@@ -34,7 +34,7 @@ public class RestSkolAsyncResource {
     private String longPendingTask() {
         logger.info("Long pending tasks started");
         try {
-            Thread.sleep(100000);
+            Thread.sleep(200000);
         } catch (InterruptedException e) {
             logger.error("Error while thread sleep");
         }
