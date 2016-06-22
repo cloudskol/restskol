@@ -28,6 +28,8 @@ import java.util.concurrent.TimeUnit;
  * @author tham (zarub2k@gmail.com)
  *
  * Configuration file for our application
+ *
+ * Features, Providers, Listeners and resources is registered here
  */
 public class RestSkolApplication extends ResourceConfig {
     private static final Logger logger = LogManager.getLogger(RestSkolApplication.class);
