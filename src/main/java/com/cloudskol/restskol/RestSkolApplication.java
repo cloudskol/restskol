@@ -63,11 +63,17 @@ public class RestSkolApplication extends ResourceConfig {
 //        logger.info("Console reporter is enabled successfully!");
     }
 
+    /**
+     * Method to register additional feature for our application
+     */
     private void registerFeatures() {
         register(JacksonFeature.class); //Enable Jackson parsing support
         register(SseFeature.class); //Enable Server sent events
     }
 
+    /**
+     * Method to register resource implementations
+     */
     private void registerResources() {
         classes.add(BookResource.class);
         classes.add(VersionedAPI.class);
