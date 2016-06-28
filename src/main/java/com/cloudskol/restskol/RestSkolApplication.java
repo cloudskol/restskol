@@ -82,6 +82,9 @@ public class RestSkolApplication extends ResourceConfig {
 //        classes.add(RestSkolSSEResource.class);
     }
 
+    /**
+     * Method to register providers
+     */
     private void registerProviders() {
         classes.add(APIKeyCheckRequestFilter.class);
         classes.add(RestSkolResponseFilter.class);
