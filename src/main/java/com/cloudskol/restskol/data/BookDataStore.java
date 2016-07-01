@@ -16,6 +16,10 @@ public class BookDataStore {
         return bookDataStore;
     }
 
+    /**
+     * Simulator for providing all the available books
+     * @return
+     */
     public List<Book> getBooks() {
         if (availableBooks.isEmpty()) {
             initialize();
